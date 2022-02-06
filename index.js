@@ -34,7 +34,7 @@ async function askQuestion() {
             } else {
                 let answer = operation(num1, num2);
 
-                var code = fs.readFileSync('index.js').toString().split("\r\n");
+                var code = fs.readFileSync('index.js').toString().replace(/\r/g, '').split("\n");
 
                 let answers = JSON.parse(code[3].replace('const calculations = ', '').replace(';', ''));
 
